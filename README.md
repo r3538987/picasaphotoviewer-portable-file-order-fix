@@ -66,17 +66,4 @@ Expected patched SHA-256:
 
 See [manifest.json](patches/manifest.json) for patch hashes and compatibility information.
 
-## Validation status
-
-Both patch formats were applied with Flips and reproduced the tested executable byte for byte. BPS checks also rejected a changed source, an already-patched source, and a corrupted patch.
-
-A controlled navigation test used six images whose filename and modification-date orders differed. Starting at `03_third.jpg`:
-
-| Build | Next image | Previous image |
-| --- | --- | --- |
-| Original | `01_first.jpg` | `05_fifth.jpg` |
-| Patched | `04_fourth.jpg` | `02_second.jpg` |
-
-The navigation tests used direct launches. **Directory Opus launching and Explorer-order preservation still need runtime validation.**
-
 The patch was derived from Ghidra disassembly and decompiled code. It is specific to the executable identified above.
