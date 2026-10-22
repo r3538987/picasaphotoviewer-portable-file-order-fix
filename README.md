@@ -4,6 +4,8 @@ A tiny patch that makes **Picasa Photo Viewer browse images by filename ascendin
 
 When an image is opened from a third-party file manager such as Directory Opus, Picasa can fall back to modification-date ordering for adjacent images. This project changes that fallback to filename ordering while retaining the comparisons that prioritize Explorer's displayed order.
 
+![sample](res/example.png)
+
 The repository contains two small patch files and documentation. You supply the original Picasa executable and a patching tool.
 
 ## Supported executable
