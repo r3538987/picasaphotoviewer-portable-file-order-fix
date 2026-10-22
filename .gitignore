@@ -1,0 +1,13 @@
+# Keep local application binaries and analysis artifacts out of the patch repo.
+*.exe
+*.dll
+*.pdb
+*.log
+
+# Local editor and operating-system files.
+.vscode/
+.idea/
+__pycache__/
+.DS_Store
+Thumbs.db
+Desktop.ini

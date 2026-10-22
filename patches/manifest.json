@@ -1,0 +1,48 @@
+{
+  "patch_version": 1,
+  "purpose": "Filename ascending fallback navigation in Picasa Photo Viewer; retain Explorer-position comparisons",
+  "executable": "PicasaPhotoViewer.exe",
+  "file_version": "3.1.70.73",
+  "architecture": "x86 (32-bit)",
+  "original": {
+    "bytes": 4367936,
+    "sha256": "c56683a64139c73148ca7e30972b567c6212e550a6273b9e48bd80b4bebf98e5",
+    "crc32": "DF5903EF"
+  },
+  "patched": {
+    "bytes": 4367936,
+    "sha256": "3f2dc3d0bb35d6d1cf063ac70ad826ca66d9b072d5128811c9135f8d5c21eb79",
+    "crc32": "C128A733"
+  },
+  "recommended_format": "BPS",
+  "patches": [
+    {
+      "file": "PicasaPhotoViewer-3.1.70.73-filename-order.bps",
+      "bytes": 43,
+      "sha256": "cb5c88dc8a967a7991ea1c81a20a29c902b3912b7d375a968313ec8df6cc8c5a"
+    },
+    {
+      "file": "PicasaPhotoViewer-3.1.70.73-filename-order.ips",
+      "bytes": 25,
+      "sha256": "497a80e40af53c5a41b18a19d5efb9b4ee0addbd3f75d6130755573163620ff0"
+    }
+  ],
+  "changes": [
+    {
+      "file_offset": "0x00050519",
+      "original": "8d542440",
+      "patched": "eb159090"
+    },
+    {
+      "file_offset": "0x00050be7",
+      "original": "8d5f08",
+      "patched": "eb1690"
+    }
+  ],
+  "validation": {
+    "patch_roundtrip": "Both formats reproduce the tested EXE byte for byte",
+    "direct_launch_navigation": "Passed controlled filename-order smoke test",
+    "directory_opus_launch": "Pending",
+    "explorer_order_preservation": "Pending"
+  }
+}
