@@ -2,47 +2,91 @@
   "patch_version": 1,
   "purpose": "Filename ascending fallback navigation in Picasa Photo Viewer; retain Explorer-position comparisons",
   "executable": "PicasaPhotoViewer.exe",
-  "file_version": "3.1.70.73",
   "architecture": "x86 (32-bit)",
-  "original": {
-    "bytes": 4367936,
-    "sha256": "c56683a64139c73148ca7e30972b567c6212e550a6273b9e48bd80b4bebf98e5",
-    "crc32": "DF5903EF"
-  },
-  "patched": {
-    "bytes": 4367936,
-    "sha256": "3f2dc3d0bb35d6d1cf063ac70ad826ca66d9b072d5128811c9135f8d5c21eb79",
-    "crc32": "C128A733"
-  },
   "recommended_format": "BPS",
-  "patches": [
+  "manifest_schema_version": 2,
+  "versions": [
     {
-      "file": "PicasaPhotoViewer-3.1.70.73-filename-order.bps",
-      "bytes": 43,
-      "sha256": "cb5c88dc8a967a7991ea1c81a20a29c902b3912b7d375a968313ec8df6cc8c5a"
+      "file_version": "3.1.70.73",
+      "original": {
+        "bytes": 4367936,
+        "sha256": "c56683a64139c73148ca7e30972b567c6212e550a6273b9e48bd80b4bebf98e5",
+        "crc32": "DF5903EF"
+      },
+      "patched": {
+        "bytes": 4367936,
+        "sha256": "3f2dc3d0bb35d6d1cf063ac70ad826ca66d9b072d5128811c9135f8d5c21eb79",
+        "crc32": "C128A733"
+      },
+      "patches": [
+        {
+          "file": "PicasaPhotoViewer-3.1.70.73-filename-order.bps",
+          "bytes": 43,
+          "sha256": "cb5c88dc8a967a7991ea1c81a20a29c902b3912b7d375a968313ec8df6cc8c5a"
+        },
+        {
+          "file": "PicasaPhotoViewer-3.1.70.73-filename-order.ips",
+          "bytes": 25,
+          "sha256": "497a80e40af53c5a41b18a19d5efb9b4ee0addbd3f75d6130755573163620ff0"
+        }
+      ],
+      "changes": [
+        {
+          "file_offset": "0x00050519",
+          "original": "8d542440",
+          "patched": "eb159090"
+        },
+        {
+          "file_offset": "0x00050be7",
+          "original": "8d5f08",
+          "patched": "eb1690"
+        }
+      ],
+      "validation": {
+        "patch_roundtrip": "Both formats reproduce the tested EXE byte for byte",
+        "direct_launch_navigation": "Passed controlled filename-order smoke test",
+        "directory_opus_launch": "User confirmed the 3.1 fix works",
+        "explorer_order_preservation": "Pending"
+      }
     },
     {
-      "file": "PicasaPhotoViewer-3.1.70.73-filename-order.ips",
-      "bytes": 25,
-      "sha256": "497a80e40af53c5a41b18a19d5efb9b4ee0addbd3f75d6130755573163620ff0"
+      "file_version": "3.9.141.259",
+      "original": {
+        "bytes": 4806984,
+        "sha256": "d7cdc29430e0887115f09736fccc82fba79c115dc49150695ab7be0ae97ff371",
+        "crc32": "C6AE910F"
+      },
+      "patched": {
+        "bytes": 4806984,
+        "sha256": "c347b941954587d2dd31d50500e8617a3b2f6cfbb1428488f5a63fc2ae3bb04f",
+        "crc32": "55A4B0F2"
+      },
+      "patches": [
+        {
+          "file": "PicasaPhotoViewer-3.9.141.259-filename-order.bps",
+          "bytes": 36,
+          "sha256": "d143ffe3dbb6b8349f5d53335e1a7a477067d86d2253bf8886a8120f8a89f850"
+        },
+        {
+          "file": "PicasaPhotoViewer-3.9.141.259-filename-order.ips",
+          "bytes": 16,
+          "sha256": "c6a78aafdb463dc943f0a412db1de934cbf137a5fa55028617f84bfb26a68e05"
+        }
+      ],
+      "changes": [
+        {
+          "file_offset": "0x000400bf",
+          "original": "dd4208",
+          "patched": "eb1790"
+        }
+      ],
+      "validation": {
+        "patch_roundtrip": "Both formats reproduce the tested EXE byte for byte",
+        "bps_rejection": "Rejected the 3.1 executable and already-patched 3.9 executable",
+        "direct_launch_navigation": "Passed controlled filename-order smoke test",
+        "directory_opus_launch": "User confirmed the 3.9 fix works",
+        "explorer_order_preservation": "Not separately confirmed"
+      }
     }
-  ],
-  "changes": [
-    {
-      "file_offset": "0x00050519",
-      "original": "8d542440",
-      "patched": "eb159090"
-    },
-    {
-      "file_offset": "0x00050be7",
-      "original": "8d5f08",
-      "patched": "eb1690"
-    }
-  ],
-  "validation": {
-    "patch_roundtrip": "Both formats reproduce the tested EXE byte for byte",
-    "direct_launch_navigation": "Passed controlled filename-order smoke test",
-    "directory_opus_launch": "Pending",
-    "explorer_order_preservation": "Pending"
-  }
+  ]
 }
